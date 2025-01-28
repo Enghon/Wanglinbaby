@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="assets/css/app.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap"
+      rel="stylesheet"
+    />
+    <title id="title">祝你 2023 新年快乐！</title>
+  </head>
+  <body
+    class="select-none w-screen h-screen overflow-hidden"
+    ondragstart="return false;"
+  >
+    <div
+      class="relative main z-50 flex flex-col justify-center items-center"
+      style="background: rgba(0, 0, 0, 0.8); backdrop-filter: blur(3.2px)"
+      id="pre"
+    >
+      <div class="words text-white mb-6">happy new 2025 for 蒲仕祥</div>
+      <button onclick="startFireworks()" id="start-button">
+        V I E W
+        <div id="clip">
+          <div id="leftTop" class="corner"></div>
+          <div id="rightBottom" class="corner"></div>
+          <div id="rightTop" class="corner"></div>
+          <div id="leftBottom" class="corner"></div>
+        </div>
+        <span id="rightArrow" class="arrow"></span>
+        <span id="leftArrow" class="arrow"></span>
+      </button>
+      <div class="bottom-8 w-screen left-0 absolute text-white">
+        <div class="container mx-auto max-w-xl text-sm opacity-60">
+          Write it by
+          <a href="" target="_blank" nofollow noopener
+            >YinHai</a
+          >.&emsp;
+          <a
+            href=""
+            target="_blank"
+            nofollow
+            noopener
+            >GitHub</a
+          >
+        </div>
+      </div>
+    </div>
+    <div class="main z-30 flex justify-center items-center text-white">
+      <div class="words" id="typed"></div>
+    </div>
+    <div class="main z-20" id="fireworks"></div>
+    <div class="main z-10 bg-black"></div>
+    <script src="https://npm.elemecdn.com/fireworks-js@2.x/dist/index.umd.js"></script>
+    <script
+      src="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/typed.js/2.0.12/typed.min.js"
+      type="application/javascript"
+    ></script>
+    <script>
+      const container = document.querySelector("#fireworks");
+      const fireworks = new Fireworks.default(container, {
+        sound: {
+          enabled: true,
+          files: [
+            "assets/media/explosion0.mp3",
+            "assets/media/explosion1.mp3",
+            "assets/media/explosion2.mp3",
+          ],
+        },
+      });
+      var typed_options = {
+        strings: [
+          "祝愿您在2025年：",
+          "学习进步，日子红红火火；",
+          "生活多姿多彩，幸福如影随形；",
+          "身体健康平安，家庭和乐美满；",
+          "愿您的每一个梦想都能实现，每一天都充满喜悦和希望！🎉🎊",
+          "蒲仕祥过年好！",
+        ],
+        typeSpeed: 200,
+      };
+      function startFireworks() {
+        document.getElementById("pre").style.display = "none";
+        fireworks.start();
+        var typed = new Typed("#typed", typed_options);
+      }
+    </script>
+  </body>
+</html>
